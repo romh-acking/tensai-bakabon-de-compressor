@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+  
+<PropertyGroup>
+     <!-- 
+     Turns off reference assembly generation 
+     See: https://docs.microsoft.com/en-us/dotnet/standard/assembly/reference-assemblies
+     -->
+     <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+</PropertyGroup>
+
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <Compile Remove="Compression\MarioPicross - Copy.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Misc\ComparisonClasses.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="Misc\ComparisonClasses.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+</Project>
